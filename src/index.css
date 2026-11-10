@@ -1,0 +1,59 @@
+:root {
+  --bg: #0f1117;
+  --surface: #171923;
+  --border: #262a37;
+  --border-input: #2d3242;
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --primary: #f43f5e;
+  --primary-dark: #e11d48;
+  --star: #fbbf24;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+
+/* Teks umum */
+.page-title { margin-bottom: 8px; }
+.subtitle { color: var(--text-muted); margin-bottom: 20px; }
+.section-title { display: flex; align-items: center; gap: 8px; margin: 24px 0 12px; }
+.meta { color: var(--text-muted); font-size: .85rem; }
+
+/* Tombol */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px; border: none; border-radius: 8px;
+  cursor: pointer; font-size: .9rem;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-danger-soft { background: #3b1d28; color: #fb7185; }
+.btn-outline-danger { background: transparent; color: #f87171; border: 1px solid #7f1d1d; }
+
+/* Input */
+input, select, textarea {
+  padding: 10px 12px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  font-size: .9rem;
+  font-family: inherit;
+}
+textarea { min-height: 70px; resize: vertical; }
+
+/* Kondisi kosong & halaman tentang */
+.empty {
+  text-align: center; padding: 48px 0; color: #6b7280;
+  display: grid; gap: 12px; justify-items: center;
+}
+.about-list { margin: 12px 0 12px 20px; line-height: 1.8; }
