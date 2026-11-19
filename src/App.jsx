@@ -22,6 +22,20 @@ function loadData(key, fallback) {
   }
 }
 
+function loadMovies() {
+  const stored = loadData("movies", initialMovies);
+  const storedIds = new Set(stored.map((movie) => movie.id));
+  const initialById = new Map(initialMovies.map((movie) => [movie.id, movie]));
+  const merged = [...initialMovies.filter((movie) => !storedIds.has(movie.id)), ...stored];
+
+  return merged.map((movie) => {
+    const initialMovie = initialById.get(movie.id);
+    return initialMovie
+      ? { ...initialMovie, ...movie, posterUrl: initialMovie.posterUrl }
+      : movie;
+  });
+}
+
 const PALETTE = [
   ["#1e3a8a", "#6366f1"],
   ["#9f1239", "#fb923c"],
@@ -30,7 +44,7 @@ const PALETTE = [
 ];
 
 export default function App() {
-  const [movies, setMovies] = useState(() => loadData("movies", initialMovies));
+  const [movies, setMovies] = useState(loadMovies);
   const [favorites, setFavorites] = useState(() => loadData("favorites", []));
 
   useEffect(() => {
