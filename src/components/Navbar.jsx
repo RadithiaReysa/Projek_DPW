@@ -6,7 +6,7 @@ export default function Navbar({ favoriteCount = 0 }) {
     <header className="navbar">
       <div className="container nav-inner">
         <h1 className="logo">
-          <Clapperboard size={24} /> CineKatalog
+          <Clapperboard size={24} /> DexterKatalog
         </h1>
         <nav className="nav-links">
           <NavLink to="/" end>

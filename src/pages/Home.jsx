@@ -19,7 +19,7 @@ export default function Home({ movies }) {
 
   return (
     <section>
-      <h2 className="page-title">Selamat datang di CineKatalog 🎬</h2>
+      <h2 className="page-title">Selamat datang di DexterKatalog 🎬</h2>
       <p className="subtitle">Jelajahi dan kelola koleksi film favoritmu.</p>
 
       <div className="stats">
